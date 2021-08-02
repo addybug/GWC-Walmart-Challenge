@@ -1,5 +1,17 @@
 {
-  "version": 1,
+  "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/nest"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "linter": "eslint",
+        "strict": true,
+        "babel": true
+      }
+    }
+  },
   "projects": {
     "web-app": {
       "root": "apps/web-app",
@@ -166,9 +178,6 @@
       }
     }
   },
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
   "schematics": {
     "@nrwl/workspace": {
       "library": {
@@ -220,5 +229,5 @@
       }
     }
   },
-  "defaultProject": "web-app"
+  "defaultProject": "api"
 }

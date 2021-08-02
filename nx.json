@@ -20,12 +20,6 @@
     },
     "api": {
       "tags": []
-    },
-    "feature-sets": {
-      "tags": []
-    },
-    "data-access": {
-      "tags": []
     }
   }
 }
