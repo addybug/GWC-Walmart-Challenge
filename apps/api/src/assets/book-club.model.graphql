@@ -1,0 +1,7 @@
+# Book Club
+
+type BookClub implements Node{
+  id: ID!
+  name: String
+  description: String
+}

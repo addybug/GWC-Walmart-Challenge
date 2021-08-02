@@ -1,0 +1,15 @@
+.createContainer {
+  background-color: rgba(244, 162, 97, 0.5);
+  position: absolute;
+  top: 50px;
+  padding: 2rem;
+  padding-right: 15rem;
+  bottom: 0;
+  width: 100%;
+}
+
+.createHeader {
+  color: #f4a261;
+  text-transform: uppercase;
+  font-weight: bold;
+}

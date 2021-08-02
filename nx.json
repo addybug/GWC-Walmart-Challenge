@@ -1,0 +1,31 @@
+{
+  "npmScope": "nx-apollo-react-example",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "web-app": {
+      "tags": []
+    },
+    "nx-apollo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["web-app"]
+    },
+    "api": {
+      "tags": []
+    },
+    "feature-sets": {
+      "tags": []
+    },
+    "data-access": {
+      "tags": []
+    }
+  }
+}

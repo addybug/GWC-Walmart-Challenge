@@ -1,0 +1,186 @@
+@keyframes w1anim {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  20% {
+    opacity:0;
+  }
+}
+
+@keyframes w2anim {
+  20%{
+    opacity: 0;
+  }
+  30%{
+    opacity: 1;
+  }
+  40% {
+    opacity:0;
+  }
+}
+
+@keyframes w3anim {
+  40%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  60% {
+    opacity:0;
+  }
+}
+
+@keyframes w4anim {
+  60%{
+    opacity: 0;
+  }
+  70%{
+    opacity: 1;
+  }
+  80% {
+    opacity:0;
+  }
+}
+
+@keyframes w5anim {
+  80%{
+    opacity: 0;
+  }
+  90%{
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+.banner {
+  background: #2a9d8f;
+  padding: 4rem;
+  width: 100% !important;
+  margin: 0;
+}
+
+.container {
+  max-width: 100% !important;
+  padding: 0;
+  width: 100%
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.invite {
+  color: #e9c46a;
+}
+
+.always {
+  margin-left: 10px !important;
+  background-color: white;
+  color: #2a9d8f;
+  padding: 2px 8px;
+  width: 152px !important;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-left: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+.svgComp {
+  width: 350px;
+  height: 350px;
+  padding: 0;
+  margin-bottom: -100px;
+}
+
+.word {
+  float:left;
+  opacity:0;
+  position:absolute;
+  margin-left: 6px;
+  font-weight: bold;
+}
+
+.w1 {
+  animation: w1anim 20s infinite;
+}
+
+.w2 {
+  animation: w2anim 20s infinite;
+}
+
+.w3 {
+  animation: w3anim 20s infinite;
+}
+
+.w4 {
+  animation: w4anim 20s infinite;
+}
+
+.w5 {
+  animation: w5anim 20s infinite;
+}
+.start {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.iconHome {
+  background-color: #f4a261;
+  color: white;
+  border-radius: 25px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.colIcons {
+  padding: 2rem;
+  text-align: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconHeader {
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.iconInfo {
+  width: 100%;
+  --bs-gutter-x: 0 !important;
+  background-color: rgba(244, 162, 97, 0.5);
+}
+
+.homeContainer {
+  margin-top: 50px !important;
+}
+
+.section3header {
+  font-weight: bold;
+  color: #2a9d8f;
+  text-transform: uppercase;
+}
+
+.section3row {
+  --bs-gutter-x: 0 !important;
+}
+
+.section3description {
+  padding: 3rem 2rem;
+}
