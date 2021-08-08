@@ -164,7 +164,7 @@ h1 {
 .iconInfo {
   width: 100%;
   --bs-gutter-x: 0 !important;
-  background-color: rgba(244, 162, 97, 0.5);
+  background-color: rgba(244, 162, 97, 0.4);
 }
 
 .homeContainer {

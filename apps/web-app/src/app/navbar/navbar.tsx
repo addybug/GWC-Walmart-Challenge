@@ -2,8 +2,11 @@ import React from 'react';
 import {Navbar, Container, Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import Login from "../login/login";
+import {useHistory} from "react-router-dom";
 
 export function Navigation() {
+  const history = useHistory();
+
   return(
     <Navbar fixed="top" bg="dark" variant="dark">
       <Container>
@@ -22,8 +25,8 @@ export function Navigation() {
           <Navbar.Text style={{display:"flex", alignItems:"center"}}>
             {localStorage.name ?
               <div>Hi, {localStorage.name}!
-                <Button style={{marginLeft:"10px"}} size="sm" variant="light">Create Invite</Button>{' '}
-                <Button style={{marginLeft:"10px"}} size="sm" onClick={(() => {localStorage.clear(); window.location.reload()})} variant="outline-light">Log Out</Button>{' '}
+                <Button style={{marginLeft:"10px", color:"black"}} size="sm" href="create-invite" variant="light">Create Invite</Button>{' '}
+                <Button style={{marginLeft:"10px"}} size="sm" onClick={(() => {localStorage.clear(); history.push("/"); window.location.reload()})} variant="outline-light">Log Out</Button>{' '}
               </div>
               : <Login />}
           </Navbar.Text>

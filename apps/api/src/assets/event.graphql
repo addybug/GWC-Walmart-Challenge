@@ -1,0 +1,16 @@
+# Event Model
+
+type Event {
+  id: ID!
+  invite: String!
+  name: String!
+  description: String!
+  startTime: String!
+  endTime: String!
+  type: String!
+  link: String
+  mask: String
+  test: String
+  guests: String!
+  color: String!
+}
