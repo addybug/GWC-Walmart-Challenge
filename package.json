@@ -41,6 +41,7 @@
     "document-register-element": "^1.14.10",
     "graphql": "^15.5.1",
     "graphql-tools": "^8.0.0",
+    "heroku": "^7.56.1",
     "i": "^0.3.6",
     "nestjs": "0.0.1",
     "npm": "^7.20.3",
