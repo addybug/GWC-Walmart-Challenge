@@ -2,9 +2,11 @@ import {Button, Col, Row} from "react-bootstrap";
 import SvgComponent from "../svg/svg-creator";
 import React, {useState} from "react";
 import LoginModal from "../../login/login-modal";
+import {useHistory} from "react-router-dom";
 
 function SectionOne() {
   const [clicked, setClick] = useState(false);
+  const history = useHistory();
 
   return(
     <Row className="banner">
@@ -26,7 +28,7 @@ function SectionOne() {
           <span className="word w5">Zoom Happy Hour</span>
         </h5>
         <Button className="start" onClick={() => setClick(true)} variant="outline-light">Get Started!</Button>{' '}
-        { clicked && localStorage.name ? "" : (clicked ? <LoginModal /> : "")}
+        { clicked && localStorage.name ? history.push('/create-invite') : (clicked ? <LoginModal /> : "")}
       </Col>
       <Col md={5}>
         <SvgComponent className="svgComp" />

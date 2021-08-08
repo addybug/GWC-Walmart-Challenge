@@ -1,12 +1,6 @@
 import {Form} from "react-bootstrap";
-import React, {Dispatch, SetStateAction} from "react";
-import {InviteDetails} from "./invite-details";
-
-interface FormDetails {
-  setForm: Dispatch<SetStateAction<any>>;
-  form: InviteDetails;
-  errors: InviteDetails;
-}
+import React from "react";
+import {FormDetails} from "./form-details";
 
 interface NameDetails extends FormDetails {
   type: string
@@ -14,7 +8,7 @@ interface NameDetails extends FormDetails {
 
 function FormName({setForm, form, errors, type}: NameDetails) {
 
-  const setField = (field, value) => {
+  const setField = (field: string, value: string) => {
     setForm({
       ...form,
       [field]: value
@@ -26,13 +20,10 @@ function FormName({setForm, form, errors, type}: NameDetails) {
       <Form.Label>Name of Event</Form.Label>
       <Form.Control
         type="text"
-        onChange={ e => setField('name', e.target.value)}
+        onChange={ (event: React.ChangeEvent<HTMLInputElement>) => setField('name', event.target.value)}
         placeholder={localStorage.name + "'s " + type}
         isInvalid={ !!errors.name }
       />
-      <Form.Text>
-        Enter the name of your event.
-      </Form.Text>
       <Form.Control.Feedback type='invalid'>
         { errors.name }
       </Form.Control.Feedback>

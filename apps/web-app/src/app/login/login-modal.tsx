@@ -29,7 +29,7 @@ function LoginModal() {
 
   const handleLogin = () => {
     const newErrors = findFormErrors()
-    if ( newErrors.name.length > 0 && newErrors.email.length > 0 ) {
+    if ( newErrors.name.length > 0 || newErrors.email.length > 0 ) {
       setErrors(newErrors)
     } else {
       localStorage.setItem("name", form.name);

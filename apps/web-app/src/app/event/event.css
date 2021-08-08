@@ -1,0 +1,44 @@
+.eventOuter {
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+}
+
+.eventContainer {
+  padding: 2rem;
+  margin-top: 60px;
+  background-color: white;
+  border-width: 2rem;
+  border-style: solid;
+  width: 100%;
+  top: 0;
+}
+
+.eventHeader {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.detailHeader {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.eventDetails {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+@media (min-width: 750px) {
+  .guestsCol {
+    border-left: grey solid 1.5px;
+    padding-left: 20px;
+  }
+}
+
+.slick-arrow, .slick-prev:before, .slick-next:before {
+  color: black !important;
+  display: block !important;
+  visibility: visible !important;
+}

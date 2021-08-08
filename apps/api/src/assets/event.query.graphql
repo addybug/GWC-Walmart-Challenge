@@ -1,0 +1,7 @@
+extend type Query {
+  events(criteria: EventQueryInput): [Event]
+}
+
+input EventQueryInput {
+  id: ID
+}

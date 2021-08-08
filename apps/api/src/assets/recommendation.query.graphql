@@ -1,0 +1,7 @@
+extend type Query {
+  recommendations(criteria: RecQueryInput!): Recommendation
+}
+
+input RecQueryInput {
+  type: String
+}
