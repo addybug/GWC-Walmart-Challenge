@@ -16,7 +16,7 @@ function FormType({setForm, form, errors}: FormDetails) {
 
   return(
     <div>
-      <Form.Group className="mb-3" controlId="formBasicDescription">
+      <Form.Group className="mb-3">
         <Form.Label>Is your Event Remote or In Person? </Form.Label>
         <Form.Check
           type="radio"

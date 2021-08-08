@@ -1,7 +1,7 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 
 export const client = new ApolloClient({
-  uri: 'https://gwc-walmart-challenge.vercel.app/graphql',
-  cache: new InMemoryCache()
-})
+  cache: new InMemoryCache(),
+  link: createHttpLink({ uri: "/api/graphql" }),
+});

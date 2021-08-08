@@ -16,7 +16,7 @@ function FormName({setForm, form, errors, type}: NameDetails) {
   }
 
   return(
-    <Form.Group className="mb-3" controlId="formBasicName">
+    <Form.Group className="mb-3">
       <Form.Label>Name of Event</Form.Label>
       <Form.Control
         type="text"

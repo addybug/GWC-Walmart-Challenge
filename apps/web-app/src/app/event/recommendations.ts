@@ -1,7 +1,4 @@
-import {Recommendation} from "../../apps/api/src/app/graphql";
-
-
-export const recommendations: Recommendation[] = [
+export const recommendations = [
   {
     type: "Book Club",
     recs: [
