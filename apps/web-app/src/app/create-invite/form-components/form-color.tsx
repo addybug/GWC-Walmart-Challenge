@@ -12,7 +12,7 @@ function FormColor({setForm, form, errors}: FormDetails) {
   }
 
   return(
-    <Form.Group className="mb-3" controlId="formBasicName">
+    <Form.Group className="mb-3">
       <Form.Label htmlFor="colorInput">Choose a Color For Your Invite</Form.Label>
       <Form.Control
         type="color"

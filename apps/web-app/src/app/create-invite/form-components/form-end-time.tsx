@@ -17,7 +17,7 @@ function FormEndTime({setForm, form, errors}: FormDetails) {
   }
 
   return(
-    <Form.Group className="mb-3" controlId="formBasicStartTime">
+    <Form.Group className="mb-3">
       <Form.Label>End Time</Form.Label>
       <DateTimePicker
         value={dateTime}

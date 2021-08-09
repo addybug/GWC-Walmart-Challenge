@@ -24,7 +24,7 @@ function SectionTwo() {
           <CardChecklist size={40} />
         </div>
         <h3 className="iconHeader">TRACK</h3>
-        <p>Keep track of attendees. You'll be able to see how has accepted and declined your invite.</p>
+        <p>Keep track of attendees. You'll be able to see who has accepted and declined your invite.</p>
       </Col>
       <Col className="colIcons">
         <div className="iconHome">

@@ -12,7 +12,7 @@ function FormDescription({setForm, form, errors}: FormDetails) {
   }
 
   return(
-    <Form.Group className="mb-3" controlId="formBasicDescription">
+    <Form.Group className="mb-3">
       <Form.Label>Description</Form.Label>
       <Form.Control
         type="text"

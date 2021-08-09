@@ -2,21 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import 'bootstrap/dist/css/bootstrap.css';
 import {Card} from "react-bootstrap";
-import {gql, useQuery} from "@apollo/client";
-
-const GET_RECOMMENDATIONS = gql`
-query getRecommendations($criteria: RecQueryInput!) {
-  recommendations(criteria: $criteria) {
-    type
-    recs {
-      img
-      name
-      price
-      link
-    }
-  }
-}
-`;
+import { recommendations } from "./recommendations"
 
 
 function SimpleSlider({type}) {
@@ -28,22 +14,11 @@ function SimpleSlider({type}) {
     slidesToScroll: 1
   };
 
-  const {data, loading, error } = useQuery(GET_RECOMMENDATIONS, {
-    variables: {criteria: {type: type}}
-  })
+  const r = recommendations.filter(rec => {return(rec.type === type)})[0];
 
-  if(error){
-    return(<div>Error. There are no recommendations for this event.</div>)
-  }
-  else if(loading){
-    return(<div>Loading.</div>)
-  }
-  else {
-    console.log(data)
-    console.log(type)
     return (
       <Slider style={{width: "85%"}}{...settings}>
-        {data.recommendations.recs.map(rec => {
+        {r.recs.map(rec => {
           return(
             <div>
               <Card style={{ margin: '0.5rem', width:"15rem" }}>
@@ -61,7 +36,6 @@ function SimpleSlider({type}) {
         })}
       </Slider>
     );
-  }
 }
 
 export default SimpleSlider;

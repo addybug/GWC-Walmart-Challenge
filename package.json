@@ -6,7 +6,7 @@
     "nx": "nx",
     "serve": "nx serve",
     "start": "nx run-many --target=serve --projects=api,web-app --parallel",
-    "build": "nx build",
+    "build": "nx run web-app:build",
     "build-gql-typing": "ts-node tools/generate-typings",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
@@ -29,6 +29,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.4.5",
+    "@babel/runtime": "^7.12.1",
     "@nestjs/common": "^8.0.5",
     "@nestjs/core": "^8.0.5",
     "@nestjs/graphql": "^8.0.2",

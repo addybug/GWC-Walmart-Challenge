@@ -9,7 +9,6 @@ import FormColor from "../form-components/form-color";
 import {Button} from "react-bootstrap";
 import FormStartTime from "../form-components/form-start-time";
 import FormEndTime from "../form-components/form-end-time";
-import {gql, useMutation} from "@apollo/client";
 import {useHistory} from "react-router-dom";
 
 const isEmailsValid = (emailList) => {
@@ -22,14 +21,6 @@ const isEmailsValid = (emailList) => {
   return true;
 }
 
-const ADD_EVENT = gql`
-  mutation addEvent($event: EventInput!) {
-    addEvent(event: $event){
-      id
-    }
-  }
-`;
-
 interface FormDetails {
   eventName: string
 }
@@ -37,7 +28,6 @@ interface FormDetails {
 function FormEvent({eventName}: FormDetails) {
   const [ form, setForm ] = useState(formBasic);
   const [ errors, setErrors ] = useState({});
-  const [addEvent] = useMutation(ADD_EVENT);
   const history = useHistory();
 
   const findFormErrors = () => {
@@ -67,32 +57,37 @@ function FormEvent({eventName}: FormDetails) {
     if (newErrors.errors) {
       setErrors(newErrors)
     } else {
-      addEvent({
-        variables: {
-          event: {
-            invite: eventName,
-            name: form.name,
-            description: form.description,
-            startTime: form.startTime,
-            endTime: form.endTime,
-            type: form.type,
-            link: form.link,
-            mask: form.mask,
-            test: form.test,
-            guests: form.guests,
-            color: form.color
-          }
-        }
-      }).then(value => {
-        history.push(`/event/` + value.data.addEvent.id);
-        }
-      )
+      const newEvent = {
+        id: '',
+        invite: eventName,
+        name: form.name,
+        description: form.description,
+        startTime: form.startTime,
+        endTime: form.endTime,
+        type: form.type,
+        link: form.link,
+        mask: form.mask,
+        test: form.test,
+        guests: form.guests,
+        color: form.color
+      };
+      if(localStorage.events){
+        newEvent.id = JSON.parse(localStorage.getItem("events")).length.toString();
+        const added = JSON.parse(localStorage.getItem("events"));
+        added.push(newEvent);
+        localStorage.setItem("events", JSON.stringify(added));
+      }
+      else {
+        newEvent.id = "0";
+        localStorage.setItem('events', JSON.stringify([newEvent]));
+      }
+      history.push("/event/" + (JSON.parse(localStorage.getItem("events")).length-1).toString());
     }
   }
 
   return (
     <div>
-      <FormName setForm={setForm} form={form} errors={errors} type={"Book Club"} />
+      <FormName setForm={setForm} form={form} errors={errors} type={eventName} />
       <FormStartTime setForm={setForm} form={form} errors={errors} />
       <FormEndTime setForm={setForm} form={form} errors={errors} />
       <FormDescription setForm={setForm} form={form} errors={errors} />
