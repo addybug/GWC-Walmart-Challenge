@@ -87,7 +87,7 @@ function FormEvent({eventName}: FormDetails) {
 
   return (
     <div>
-      <FormName setForm={setForm} form={form} errors={errors} type={"Book Club"} />
+      <FormName setForm={setForm} form={form} errors={errors} type={eventName} />
       <FormStartTime setForm={setForm} form={form} errors={errors} />
       <FormEndTime setForm={setForm} form={form} errors={errors} />
       <FormDescription setForm={setForm} form={form} errors={errors} />

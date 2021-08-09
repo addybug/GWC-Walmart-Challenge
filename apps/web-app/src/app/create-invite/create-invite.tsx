@@ -26,6 +26,12 @@ function CreateInvite() {
               <Form.Select aria-label="What Are You Planning?">
                 {afterChange ? <option disabled>Choose One</option> : <option>Choose One</option>}
                 <option value="Book Club">Book Club</option>
+                <option value="Game Night">Game Night</option>
+                <option value="Picnic">Picnic</option>
+                <option value="Camping Trip">Camping Trip</option>
+                <option value="Party">Party</option>
+                <option value="Movie Night">Movie Night</option>
+                <option value="Beach Day">Beach Day</option>
               </Form.Select>
             </Form.Group>
             {event === '' ? '' : <FormEvent eventName={event} />}
